@@ -7,7 +7,7 @@ function App() {
   const [delegations, setDelegations] = useState([]);
   const [validators, setValidators] = useState([]);
 
-  const address = 'твой_адрес'; // Замените на ваш адрес
+  const address = 'cosmos1flss89zl0s37le5636dnqputz87rnjzd88nvvc'; // Замените на ваш адрес
 
   useEffect(() => {
     const fetchData = async () => {

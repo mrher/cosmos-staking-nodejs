@@ -2,7 +2,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 const COSMOS_REST_URL = process.env.COSMOS_REST_URL;
-const ADDRESS = 'твой_адрес';
+const ADDRESS = process.env.WALLET_ADDRESS;
 
 const getBalance = async () => {
   try {
@@ -15,7 +15,7 @@ const getBalance = async () => {
 
 const getDelegations = async () => {
   try {
-    const response = await axios.get(`${COSMOS_REST_URL}/staking/delegations/${ADDRESS}`);
+    const response = await axios.get(`${COSMOS_REST_URL}/cosmos/staking/v1beta1/delegations/${ADDRESS}`);
     return response.data;
   } catch (error) {
     console.error('Ошибка при получении делегаций:', error.message);
